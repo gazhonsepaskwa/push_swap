@@ -27,7 +27,7 @@ int main(int ac, char **av)
 
 	print_stacks(stack_a, stack_b);
 
-	/*push(&stack_a, &stack_b);*/
+	push(&stack_a, &stack_b);
 	/*push(&stack_a, &stack_b);*/
 	/*push(&stack_a, &stack_b);*/
 	/*push(&stack_a, &stack_b);*/
@@ -35,8 +35,8 @@ int main(int ac, char **av)
 	/*push(&stack_a, &stack_b);*/
 	/*push(&stack_b, &stack_a);*/
 	/*swap(&stack_b);*/
-	rev_rotate(&stack_b);
-	rotate(&stack_b);
+	/*rev_rotate(&stack_b);*/
+	/*rotate(&stack_b);*/
 	ft_put_s("\n");
 
 	print_stacks(stack_a, stack_b);
