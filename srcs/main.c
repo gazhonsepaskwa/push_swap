@@ -1,42 +1,31 @@
 #include "../push_swap.h"
+#include "operations/api_op.h"
 
 int main(int ac, char **av)
 {
-	char	**tab;
 	t_node	*stack_a;
 	t_node	*stack_b;
 
 	stack_a = NULL;
 	stack_b = NULL;
-	if (ac < 2)
-	{
-		ft_error("./push_swap <values> || ./push_swap ...\n");
+	if (check_error(ac, av))
 		return (1);
-	}
-	if (ac == 2)
-	{
-		tab = ft_split(av[1], ' ');
-		create_stack(&stack_a, tab, 0);
-		if (!stack_a)
-		{
-			ft_error("[CRASH] Stack not created");
-			return (1);
-		}
-		free_tab(tab);
-	}
-
+	if (!init(ac, av, &stack_a))
+		return (1);
+	print_stacks(stack_a, stack_b);
+	
+	pa(&stack_a, &stack_b);
+	print_stacks(stack_a, stack_b);
+	pa(&stack_a, &stack_b);
+	print_stacks(stack_a, stack_b);
+	pa(&stack_a, &stack_b);
+	print_stacks(stack_a, stack_b);
+	/*pb(&stack_b, &stack_a);*/
+	/*pb(&stack_b, &stack_a);*/
+	rra(&stack_a);
+	rrb(&stack_b);
 	print_stacks(stack_a, stack_b);
 
-	push(&stack_a, &stack_b);
-	/*push(&stack_a, &stack_b);*/
-	/*push(&stack_a, &stack_b);*/
-	/*push(&stack_a, &stack_b);*/
-	/*push(&stack_a, &stack_b);*/
-	/*push(&stack_a, &stack_b);*/
-	/*push(&stack_b, &stack_a);*/
-	/*swap(&stack_b);*/
-	/*rev_rotate(&stack_b);*/
-	/*rotate(&stack_b);*/
 	ft_put_s("\n");
 
 	print_stacks(stack_a, stack_b);

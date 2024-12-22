@@ -52,7 +52,7 @@ void	*ft_memmove(void *dest, const void *src, size_t n);
 int		ft_toupper(int c);
 int		ft_tolower(int c);
 
-int		ft_atoi(const char *str);
+long	ft_atoi(const char *str);
 char	*ft_itoa(int n);
 
 void	*ft_calloc(size_t count, size_t size);
@@ -71,7 +71,7 @@ int		ft_put_c(char c);
 int		ft_put_s(char *s);
 int		ft_put_i(int n);
 int		ft_put_ui(unsigned int n);
-void	ft_error(char *e);
+int		ft_error(char *e);
 
 int		ft_printf(const char *fstr, ...);
 int		ft_debug(const char *fstr, ...);

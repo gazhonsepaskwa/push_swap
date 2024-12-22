@@ -1,4 +1,3 @@
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
@@ -17,9 +16,10 @@ void	print_stack(t_node *stack);
 int		free_stack(t_node *stack);
 void	print_stacks(t_node *stacka, t_node *stackb);
 
-void	push(t_node **from, t_node **to);
-void	swap(t_node **first);
-void	rotate(t_node **first);
-void	rev_rotate(t_node **first);
+// check.c
+int check_error(int ac, char **av);
 
-# endif
+// init.c
+int init(int ac, char **av, t_node **stack_a);
+
+#endif

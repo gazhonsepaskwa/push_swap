@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-static t_node *create_node(int val, t_node *prev)
+static t_node	*create_node(int val, t_node *prev)
 {
 	t_node	*self;
 
@@ -13,34 +13,33 @@ static t_node *create_node(int val, t_node *prev)
 	return (self);
 }
 
-
-int create_stack(t_node **stack, char **tab, int start)
+int	create_stack(t_node **stack, char **tab, int start)
 {
-    int i;
-    t_node *prev;
+	int		i;
+	t_node	*prev;
 
-    i = 0;
-    *stack = create_node(ft_atoi(tab[start]), NULL);
-    if (!(*stack))
-        return (free_stack(*stack));
-    prev = *stack;
-    while (tab[start + i + 1])
-    {
-        prev->next = create_node(ft_atoi(tab[start + i + 1]), prev);
-        if (!prev->next)
-            return (free_stack(*stack));
-        prev = prev->next;
-        i++;
-    }
+	i = 0;
+	*stack = create_node((int)ft_atoi(tab[start]), NULL);
+	if (!(*stack))
+		return (free_stack(*stack));
+	prev = *stack;
+	while (tab[start + i + 1])
+	{
+		prev->next = create_node((int)ft_atoi(tab[start + i + 1]), prev);
+		if (!prev->next)
+			return (free_stack(*stack));
+		prev = prev->next;
+		i++;
+	}
 	prev->next = *stack;
-    (*stack)->prev = prev;
-    return (0);
+	(*stack)->prev = prev;
+	return (0);
 }
 
 void	print_stack(t_node *stack)
 {
-	t_node *start;
-	t_node *actual;
+	t_node	*start;
+	t_node	*actual;
 
 	if (!stack)
 	{
@@ -69,8 +68,7 @@ void	print_stacks(t_node *stacka, t_node *stackb)
 	actuala = stacka;
 	actualb = stackb;
 	ft_printf("a | b\n=====\n");
-
-	while (actuala || actualb) // Loop while there's data in either stack
+	while (actuala || actualb)
 	{
 		if (actuala)
 		{
@@ -92,8 +90,8 @@ void	print_stacks(t_node *stacka, t_node *stackb)
 
 int	free_stack(t_node *stack)
 {
-	t_node *start;
-	t_node *second;
+	t_node	*start;
+	t_node	*second;
 
 	if (!stack)
 		return (-1);
