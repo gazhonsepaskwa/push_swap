@@ -7,7 +7,7 @@ int init(int ac, char **av, t_node **stack_a)
 	if (ac == 2)
 	{
 		tab = ft_split(av[1], ' ');
-		create_stack(stack_a, tab, 0);
+		create_stack(stack_a, tab, 0, 2147483647);
 		if (!(*stack_a))
 		{
 			ft_error("Error\n");
@@ -15,6 +15,15 @@ int init(int ac, char **av, t_node **stack_a)
 			return (0);
 		}
 		free_tab(tab);
+	}
+	else
+	{
+		create_stack(stack_a, av, 1, ac);
+		if (!(*stack_a))
+		{
+			ft_error("Error\n");
+			return (0);
+		}
 	}
 	return (1);
 }

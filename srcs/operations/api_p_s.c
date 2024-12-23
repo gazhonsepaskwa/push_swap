@@ -2,13 +2,13 @@
 
 void	pa(t_node **a, t_node **b)
 {
-	push(a, b);
+	push(b, a);
 	ft_put_s("pa\n");
 }
 
 void	pb(t_node **b, t_node **a)
 {
-	push(b, a);
+	push(a, b);
 	ft_put_s("pb\n");
 }
 
