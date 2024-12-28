@@ -20,7 +20,7 @@ void	print_stacks(t_node *stacka, t_node *stackb);
 int check_error(int ac, char **av);
 
 // sort.c
-int sort(t_node *a, t_node *b);
+int sort(t_node **a, t_node **b);
 
 // init.c
 int init(int ac, char **av, t_node **stack_a);

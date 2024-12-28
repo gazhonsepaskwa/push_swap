@@ -11,7 +11,7 @@ int main(int ac, char **av)
 		return (1);
 	if (!init(ac, av, &stack_a))
 		return (1);
-	sort(stack_a, stack_b);
+	sort(&stack_a, &stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
 	return (0);
