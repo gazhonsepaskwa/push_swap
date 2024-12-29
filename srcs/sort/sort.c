@@ -26,10 +26,7 @@ void	sort_tree(t_node **a)
 
 int	sort_other(t_node **a, t_node **b)
 {
-	t_node	*tmp;
-	int		reverse;
-
-	reverse  = FALSE;
+	t_node	*best_a;
 	while (TRUE)
 	{
 		if (sorted(a) && (*b) == NULL)
@@ -37,18 +34,13 @@ int	sort_other(t_node **a, t_node **b)
 		if (get_cll_len(a) == 3)
 		{
 			sort_tree(a);
-			/*while (*b && *a)*/
-			/*{*/
-			/*	ft_printf(" %p ", *a);*/
-			/*	tmp = get_min_push_cost(b, a, &reverse); */
-			/*	do_min_cost_push_a(a, b, tmp, reverse);*/
-			/*}*/
 			break;
 		}
 		else
 		{
-			tmp = get_min_push_cost(a, b, &reverse); 
-			do_min_cost_push_b(a, b, tmp, reverse);
+			best_a = get_min_push_cost(*a, *b);
+			ft_debug("chosen elem: %d\n", best_a->val);
+			do_min_cost_push(a, b, best_a);
 		}
 	}
 	return (0);

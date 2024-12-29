@@ -33,3 +33,26 @@ int	get_cll_len(t_node **a)
 	i++;
 	return (i);
 }
+
+int	ft_abs(int num)
+{
+	if (num < 0)
+		return (num * -1);
+	return (num);
+}
+
+t_node *max_val_elem(t_node *head)
+{
+    t_node *current = head;
+    t_node *max_elem = head;
+
+    while (TRUE)
+    {
+        if (current->val > max_elem->val)
+            max_elem = current;
+        current = current->next;
+		if (current == head)
+			break;
+    }
+    return max_elem;
+}
