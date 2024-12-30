@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   operations.h                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: nalebrun <nalebrun@student.s19.be>         +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/12/30 17:48:29 by nalebrun          #+#    #+#             */
+/*   Updated: 2024/12/30 17:48:38 by nalebrun         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef OPERATIONS_H
 # define OPERATIONS_H
 
-# include "../../push_swap.h" 
+# include "../../push_swap.h"
 
 t_node	*deco_node(t_node **from);
 void	reco_node(t_node **to, t_node **mooving);
