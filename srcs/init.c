@@ -1,6 +1,6 @@
 #include "../push_swap.h"
 
-int init(int ac, char **av, t_node **stack_a)
+int	init(int ac, char **av, t_node **stack_a)
 {
 	char	**tab;
 

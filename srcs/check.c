@@ -7,7 +7,8 @@ int	only_num(char *str)
 	i = 0;
 	while (str[i])
 	{
-		if (str[i] != ' ' && str[i] != '-' && str[i] != '+' && !ft_isdigit(str[i]))
+		if (str[i] != ' ' && str[i] != '-'
+			&& str[i] != '+' && !ft_isdigit(str[i]))
 		{
 			return (0);
 		}
@@ -38,7 +39,7 @@ static int	tab_error(char **tab, int start, int free)
 	return (0);
 }
 
-int check_error(int ac, char **av)
+int	check_error(int ac, char **av)
 {
 	char	**tab;	
 

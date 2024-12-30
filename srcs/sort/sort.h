@@ -1,4 +1,3 @@
-
 #ifndef SORT_H
 # define SORT_H
 
@@ -20,15 +19,18 @@ typedef struct s_rev
 }		t_rev;
 
 // sort_utils
+t_node	*max_val_elem(t_node *head);
+t_node	*min_val_elem(t_node *head);
+void	multi_rotate(int count, char *rotate, t_node **a, t_node **b);
 int		sorted(t_node **a);
 int		get_cll_len(t_node **a);
 int		ft_abs(int num);
-t_node	*max_val_elem(t_node *head);
 
 // sort_other
-t_node	*get_min_push_cost(t_node *a, t_node *b);
-int	get_cost_to_top(t_node *head, t_node *node, int *rev);
-t_node *get_elem_b(int trgt_val, t_node *b);
-void	do_min_cost_push(t_node **a, t_node **b, t_node *best_a);
+t_node	*get_min_push_cost(t_node *a, t_node *b, char *stack);
+t_node	*get_elem(int trgt_val, t_node *b, char *stack);
+void	do_min_cost_push_b(t_node **a, t_node **b, t_node *best_a);
+void	do_min_cost_push_a(t_node **a, t_node **b, t_node *best_a);
+int		get_cost_to_top(t_node *head, t_node *node, int *rev);
 
 #endif
