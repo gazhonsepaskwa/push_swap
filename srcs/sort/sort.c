@@ -27,33 +27,6 @@ void	sort_tree(t_node **a)
 	}
 }
 
-void	shift_up(t_node **a)
-{
-	t_node	*max_val;
-	t_node	*current;
-	int		list_len;
-	int		i;
-
-	max_val = max_val_elem(*a);
-	list_len = get_cll_len(a);
-	i = 0;
-	current = *a;
-	while (TRUE)
-	{
-		i++;
-		current = current->next;
-		if (current == max_val)
-			break;
-	}
-	while (max_val->next != *a)
-	{
-		if (i > list_len / 2)
-			rra(a);
-		else
-			ra(a);
-	}
-}
-
 int	sort_other(t_node **a, t_node **b)
 {
 	t_node	*best_a;

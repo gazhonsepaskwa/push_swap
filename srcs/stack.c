@@ -36,58 +36,6 @@ int	create_stack(t_node **stack, char **tab, int start, int lim)
 	return (0);
 }
 
-/*void	print_stack(t_node *stack)*/
-/*{*/
-/*	t_node	*start;*/
-/*	t_node	*actual;*/
-/**/
-/*	if (!stack)*/
-/*	{*/
-/*		ft_error("unvalide stack");*/
-/*		return ;*/
-/*	}*/
-/*	start = stack;*/
-/*	actual = stack;*/
-/*	ft_printf("%d\n", actual->val);*/
-/*	while (actual->next != start)*/
-/*	{*/
-/*		actual = actual->next;*/
-/*		ft_printf("%d\n", actual->val);*/
-/*	}*/
-/*}*/
-/**/
-/*void	print_stacks(t_node *stacka, t_node *stackb)*/
-/*{*/
-/*	t_node	*starta;*/
-/*	t_node	*startb;*/
-/*	t_node	*actuala;*/
-/*	t_node	*actualb;*/
-/**/
-/*	starta = stacka;*/
-/*	startb = stackb;*/
-/*	actuala = stacka;*/
-/*	actualb = stackb;*/
-/*	ft_printf("a | b\n=====\n");*/
-/*	while (actuala || actualb)*/
-/*	{*/
-/*		if (actuala)*/
-/*		{*/
-/*			ft_printf("%d |", actuala->val);*/
-/*			actuala = (actuala->next != starta) ? actuala->next : NULL;*/
-/*		}*/
-/*		else*/
-/*			ft_printf("  |");*/
-/**/
-/*		if (actualb)*/
-/*		{*/
-/*			ft_printf(" %d\n", actualb->val);*/
-/*			actualb = (actualb->next != startb) ? actualb->next : NULL;*/
-/*		}*/
-/*		else*/
-/*			ft_printf("  \n");*/
-/*	}*/
-/*}*/
-
 int	free_stack(t_node *stack)
 {
 	t_node	*start;

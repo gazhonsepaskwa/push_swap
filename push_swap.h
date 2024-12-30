@@ -13,7 +13,7 @@ typedef struct s_node
 // stack.c
 int		create_stack(t_node **stack, char **tab, int start, int lim);
 int		free_stack(t_node *stack);
-void print_stack(t_node **a, t_node **b);
+void	print_stack(t_node **a, t_node **b);
 
 // check.c
 int		check_error(int ac, char **av);

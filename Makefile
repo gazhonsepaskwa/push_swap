@@ -31,10 +31,6 @@ $(NAME): $(LIBFT) $(OBJS)
 	@$(CC) $(WFLAGS) $(OBJS) $(LIBFT) -o $(NAME)
 	@echo "$(CYAN)Build completed: $(NAME)$(RESET)"
 
-fsanitize: $(LIBFT) $(OBJS)
-	@clang $(WFLAGS) $(OBJS) $(LIBFT) -g3 -ggdb -fsanitize=address -o $(NAME)
-	@echo "$(CYAN)Build completed with fsanitize : $(NAME)$(RESET)"
-
 clean:
 	@rm -rf $(OBJDIR)
 	@make -C $(LIBFT_DIR) clean

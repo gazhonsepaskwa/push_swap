@@ -34,66 +34,36 @@ int	get_cll_len(t_node **a)
 	return (i);
 }
 
+void	shift_up(t_node **a)
+{
+	t_node	*max_val;
+	t_node	*current;
+	int		list_len;
+	int		i;
+
+	max_val = max_val_elem(*a);
+	list_len = get_cll_len(a);
+	i = 0;
+	current = *a;
+	while (TRUE)
+	{
+		i++;
+		current = current->next;
+		if (current == max_val)
+			break ;
+	}
+	while (max_val->next != *a)
+	{
+		if (i > list_len / 2)
+			rra(a);
+		else
+			ra(a);
+	}
+}
+
 int	ft_abs(int num)
 {
 	if (num < 0)
 		return (num * -1);
 	return (num);
 }
-
-t_node	*max_val_elem(t_node *head)
-{
-	t_node	*current;
-	t_node	*max_elem;
-
-	current = head;
-	max_elem = head;
-	while (TRUE)
-	{
-		if (current->val > max_elem->val)
-			max_elem = current;
-		current = current->next;
-		if (current == head)
-			break ;
-	}
-	return (max_elem);
-}
-
-t_node	*min_val_elem(t_node *head)
-{
-	t_node	*current;
-	t_node	*min_elem;
-
-	current = head;
-	min_elem = head;
-	while (TRUE)
-	{
-		if (current->val < min_elem->val)
-			min_elem = current;
-		current = current->next;
-		if (current == head)
-			break ;
-	}
-	return (min_elem);
-}
-
-void	multi_rotate(int count, char *rotate, t_node **a, t_node **b)
-{
-	while (count != 0)
-	{
-		if (!ft_strncmp(rotate, "rr ", 3))
-			rr(a, b);
-		if (!ft_strncmp(rotate, "ra ", 3))
-			ra(a);
-		if (!ft_strncmp(rotate, "rra", 3))
-			rra(a);
-		if (!ft_strncmp(rotate, "rb ", 3))
-			rb(b);
-		if (!ft_strncmp(rotate, "rrb", 3))
-			rrb(b);
-		if (!ft_strncmp(rotate, "rrr", 3))
-			rrr(a, b);
-		count--;
-	}
-}
-

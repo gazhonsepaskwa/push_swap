@@ -22,8 +22,9 @@ typedef struct s_rev
 t_node	*max_val_elem(t_node *head);
 t_node	*min_val_elem(t_node *head);
 void	multi_rotate(int count, char *rotate, t_node **a, t_node **b);
-int		sorted(t_node **a);
+void	shift_up(t_node **a);
 int		get_cll_len(t_node **a);
+int		sorted(t_node **a);
 int		ft_abs(int num);
 
 // sort_other

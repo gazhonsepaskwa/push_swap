@@ -1,6 +1,5 @@
 #include "operations.h"
 
-// have a look to operations.drawio to understand :)
 void	push(t_node **from, t_node **to)
 {
 	t_node	*mooving;
