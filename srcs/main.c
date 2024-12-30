@@ -7,6 +7,8 @@ int	main(int ac, char **av)
 
 	stack_a = NULL;
 	stack_b = NULL;
+	if (ac < 2)
+		return (0);
 	if (check_error(ac, av))
 		return (1);
 	if (!init(ac, av, &stack_a))
